@@ -1,16 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>home page</title>
-</head>
-<body>
-{% extends 'base.html' %}
+  </head>
+  <body>
+    {% extends 'base.html' %} {% block content %}
+    <div style="display: flex">
+      <div style="width: 50%">
+        <h1>Barcha o'quvchilar</h1>
+        <ul>
+          {% for student in object_list %}
+          <li>{{student.name}} - {{student.ball}}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div style="width: 50%">
+        <h1>Yaxshi natija ko'rsatgan o'quvchilar</h1>
+        <ol>
+          {% for student in object_list %}
+          <li>{{student.name}} - {{student.ball}}</li>
+          {% endfor %}
+        </ol>
+      </div>
+    </div>
 
-{% block content %}
-<h1>HOme page</h1>
-
-{% endblock content %}
-
-</body>
+    {% endblock content %}
+  </body>
 </html>
